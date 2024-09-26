@@ -1,0 +1,25 @@
+# on local machine
+# docker-compose up -d && docker ps -a && sudo netstat -ntlp
+# redis-cli -h 0.0.0.0 -p 32770 -a '<passwd>' ping
+# redis-cli -a '<passwd>' ping  # syntax for older redis (6.0.16)
+# redis-cli --askpass
+# docker container rm -f $(docker ps --filter name=my-redis -q)
+
+services:
+  redis:
+    image: europe-central2-docker.pkg.dev/aluminium-prediction/aluminium-prediction/redis-server-config
+    command: redis-server /usr/local/etc/redis/redis.conf --requirepass ${REDIS_PASSWORD}
+    container_name: my-redis
+    network_mode: "host"
+    #ports:
+    #  - "6379"
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli ping --pass '${REDIS_PASSWORD}'"] # syntax for redis 7.2
+      interval: 5s
+      timeout: 3s
+      retries: 2
+    env_file: .env
+  #api:
+#secrets:
+#  redis_passwd:
+#    file: ./redis.secret
