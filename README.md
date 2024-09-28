@@ -14,4 +14,8 @@ it'not really safe, but should work for now https://stackoverflow.com/questions/
 
 https://www.google.com/amp/s/blog.approov.io/steal-that-api-key-with-a-man-in-the-middle-attack%3fhs_amp=true
 
-even https diesla not help
+even https does not help
+
+Move Security to middleware https://itsjoshcampos.codes/fast-api-api-key-authorization
+
+
