@@ -6,6 +6,8 @@ API for project https://github.com/KKobuszewski/aluminium-prediction.
 
 # Security 
 
+## Authentication 
+
 For now implement simple API key authentication
 
 https://joshdimella.com/blog/adding-api-key-auth-to-fast-api
@@ -19,3 +21,6 @@ even https does not help
 Move Security to middleware https://itsjoshcampos.codes/fast-api-api-key-authorization
 
 
+## Https 
+
+https://medium.com/@muppedaanvesh/%EF%B8%8F-kubernetes-ingress-transitioning-to-https-with-self-signed-certificates-0c7ab0231e76
